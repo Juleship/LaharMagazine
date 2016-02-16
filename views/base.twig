@@ -1,0 +1,66 @@
+{% block html_head_container %}
+
+	{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+</head>
+{% endblock %}
+
+<body class="{{body_class}}" data-template="base.twig">
+
+<!-- top menu -->
+{% include 'menu.twig' %}
+
+<section id="content" role="main" class="content-wrapper">
+	{% if title %}<h1>{{title}}</h1>{% endif %}
+		<div class="wrapper {{sidebar_class}}">
+			
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+			
+		</div>
+		{% if sidebar %}
+			<aside class="layout-sidebar">
+				{{sidebar}}
+			</aside>
+		{% endif %}
+	</section>
+
+	{% block footer %}
+		<footer id="footer">
+			{% include 'footer.twig' %}
+		</footer>
+		{{ function('wp_footer') }}
+	{% endblock %}
+
+	<script src="{{site.theme.link}}/js/build/production.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+	<script type="text/javascript">
+    // l'audio funziona porcodio
+  //   $( document ).ready(function() {
+  //    var iframe = document.getElementsByTagName('iframe')[0];
+
+    //  iframe.contentWindow.postMessage('{"method":"setVolume", "value":0}','*');
+    // });
+</script>
+<script src="/bower_components/waypoints/lib/noframework.waypoints.min.js"></script>
+
+<!-- trigger menu with waypoint -->
+<script>
+	$( document ).ready(function() {
+		var waypoint = new Waypoint({
+			element: document.getElementById('briefing'),
+			handler: function(direction) {
+				if(direction === 'down') {
+					$('.navbar').addClass('stuck');
+				}
+			}
+		})
+	});
+</script>
+
+
+
+</body>
+</html>

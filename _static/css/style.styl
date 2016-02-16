@@ -1,0 +1,165 @@
+tema-chiaro = #eee4c0
+
+p {
+	font-family: "freight-micro-pro";
+	color: black;
+	opacity: 0.8;
+	letter-spacing: 0.0799999982118607px;
+  line-height: 26.1000003814697px;
+	font-size: 18px;
+	font-weight 300
+	-webkit-font-smoothing: antialiased !important;
+}
+
+h1,h2,h3, .navbar-brand, h4 {
+	font-family: "Brandon Grotesque";
+	text-transform: uppercase;
+	color: rgb(134,134,136);
+	font-weight: 800;
+}
+
+h5
+	font-family "Brandon Grotesque"
+	text-transform: uppercase;
+
+h1, .navbar-brand {
+	font-weight: 800;
+}
+
+hr {
+	border-color: rgb(238,228,192);
+	border-width: 3px;
+}
+
+/*
+	NAVBAR
+*/
+
+.navbar
+	margin: 0;
+	height: 100px;
+	border-bottom 3px solid tema-chiaro
+
+.stuck
+	position fixed
+	top 0
+	width 100%
+	z-index 258
+	height 50px
+	.container div a
+		line-height 50px !important
+
+.navbar .container div a {
+	line-height: 100px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.navbar-nav li {
+	font-family: "Brandon Grotesque";
+	text-transform: uppercase;
+}
+
+/*
+	HERO
+*/
+
+#video-hero {
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+}
+
+#video-opacity {
+	width: 100%;
+	height: 100%;
+	background: rgba(238,228,192,0.9);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 255;
+}
+
+#welcome {
+	position: absolute;
+	top: 50%;
+	z-index: 256;
+	text-align: center;
+	color: rgb(134,134,136);
+	width: 100%;
+	left: 0;
+	margin: 0;
+	transform: translateY(-49%);
+}
+
+#video-hero #welcome h1 {
+	font-size: 90px;
+}
+
+#welcome p {
+	color: rgb(134,134,136);
+	font-family: "Brandon Grotesque";
+	font-weight: 800;
+	text-transform: uppercase;
+	font-size: 1.4em;
+}
+
+#video-hero iframe {
+	height: 140%;
+	width: 100%;
+	position: absolute;
+	top: -40px;
+	z-index: 1;
+}
+
+/*
+briefing
+*/
+
+#briefing-container
+	background rgba(black,0.8)
+	width 100%
+	p
+		color rgba(white,0.9)
+		font-size 18px
+
+#briefing
+	background rgba(white,0.1)
+	padding 2em 2em
+	h2
+		margin-top 0
+	img
+		width: 100%
+
+// main
+
+#main
+	margin-top 2em
+	h3
+		margin-top 0
+
+.rubrica
+	background rgb(238,228,192)
+	padding 1.2em 1em .8em 1em
+	margin-top 1em
+	border-top 3px solid #868688
+
+.rubrica:first-child {
+	margin-top: 0;
+}
+
+.rubrica h4 {
+	text-align: center;
+	margin-top: 0;
+}
+
+//
+// ARTICOLI
+//
+
+.articolo
+	p
+		font-size 22px
+		margin-bottom 30px
+		letter-spacing .01rem
+		line-height 1.5em

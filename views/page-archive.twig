@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <!-- center column -->
+  <div id="page">
+    <h2>{{page.title}}</h2>
+    <div class="about-p">
+      {% for category in categories %}
+        {{ category.title }}
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

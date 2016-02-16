@@ -1,0 +1,84 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <!-- hero with video -->
+  <div id="video-hero" style="width: 100%;">
+    <div class="container">
+      <div class="row">
+        <div id="welcome">
+          <h1>#21 - CHRONOS</h1>
+          <p class="text-center">Lahar Magazine è una posterzine indipendente.</p>
+        </div>
+      </div>
+    </div>
+    <div id="video-opacity"></div>
+    <iframe id="#video-player" src="https://player.vimeo.com/video/118424243?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreepn></iframe>
+  </div>
+  <!-- /#video-hero -->
+
+  <!-- #briefing -->
+  <div id="briefing-container">
+    <div id="briefing" class="container">
+      <div class="row">
+        <div class="col-sm-7">
+          <img src="{{site.theme.link}}/img/cover.png">
+        </div>
+        <div class="col-sm-5">
+          <h2>Tema del numero</h2>
+          <p>
+            “L’ironia nella donna mi sembra una conquista importante.” Franca Valeri.
+          </p>
+          <p>
+            Le donna nei luoghi di potere è una costante del dibattito politico e sociale. Quanto la nostra società sia in grado di stare al passo con i cambiamenti avvenuti così velocemente nell’ultimo secolo si misura anche attraverso la capacità di non prendersi sul serio. Perché la malattia di potere va debellata con l’ironia, il poter dialogare su tematiche prima tabù ed oggi sdoganate. Non è certo la determinazione il problema nella rincorsa al potere, quanto la rabbia che spinge l’individuo ad una riscossa fine a se stessa, che non troverà mai una fine. L’ironia che porta una donna a non essere solo accessorio nello show, la porta ad essere guida, ispiratrice e stimolo per molte persone. 
+          </p>
+          <p>
+            Il massimo grado di potere risiede nell’intelligenza. Le donne riescono ad esercitare il loro intelletto nei diversi contesti, declinabile in molteplici forme, un’intelligenza figlia di una capacità di sopravvivenza e spirito di adattamento generato dal contesto avverso che spesso si trovano ad affrontare.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- /#briefing -->
+  <div id="main" class="container">
+    <div class="row">
+      
+
+      {# articoli #}
+      <div class="col-sm-8">
+        <h3>In questo numero</h3>
+        <hr>
+        {% for post in posts %}
+          {% if post.category == '26 - Invidia' %}
+            {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {# sidebar #}
+      <div class="col-sm-4">
+        <div class="rubrica">
+          <p class="text-center">
+            <img src="{{site.theme.link}}/img/iconcina.png" alt="">
+          </p>
+          <h4>Abbonati!</h4>
+          <p>Aiuta a sostenere la rivista e ricevi a casa Lahar Magazine. Sei pronto?</p>
+          <p class="text-center">
+            <a href="abbonamenti">
+              <button class="btn btn-primary">Si lo voglio</button>
+            </a>
+          </p>
+        </div>
+
+        <div class="rubrica">
+          <p class="text-center">
+            <img src="{{site.theme.link}}/img/iconcina.png" alt="">
+          </p>
+          <h4>Cucina con Pink Sesso</h4>
+          <p>Immersi le mie dita nel burro. Mi sentivo felice.</p>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+{% endblock %}

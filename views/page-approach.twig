@@ -1,0 +1,93 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+        <h1>{{page.title}}</h1>
+        
+        <p class="approach-p">
+          {{page.content}}
+        </p>
+
+        <section class="approach-section">
+          <div class="container">
+            <p class="approach-img">
+              <img height="200px" src="{{site.theme.link}}/img/user-centric.svg">
+            </p>
+            <p class="approach-p">
+              {{page.get_field('user_centric')}}
+            </p>
+          </div>
+        </section>
+  
+        <section class="approach-section">
+          <div class="container">
+            <div class="row">
+              <div class="columns four approach-img">
+                <img src="{{site.theme.link}}/img/test.svg">
+              </div>
+              <div class="columns eight">
+                <p class="approach-p">
+                  {{page.get_field('iterate')}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="approach-section">
+          <div class="container">
+            <div class="row">
+              <div class="columns eight">
+                <p class="approach-p">
+                  {{page.get_field('test')}}
+                </p>
+              </div>
+              <div class="columns four approach-img">
+                <img height="300px" src="{{site.theme.link}}/img/rocket.svg">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="approach-section">
+          <h2>
+            Cosa sappiamo fare
+          </h2>
+          <div class="container">
+            <div class="row">
+              <div class="columns three service">
+                <p class="feature-icon">
+                  <img src="{{site.theme.link}}/img/design.svg">
+                </p>
+                <h4>UI Design</h4>
+              </div>
+              <div class="columns three service">
+                <p class="feature-icon">
+                  <img src="{{site.theme.link}}/img/web.svg">
+                </p>
+                <h4>Web</h4>
+              </div>
+              <div class="columns three service">
+                <p class="feature-icon">
+                  <img src="{{site.theme.link}}/img/app.svg">
+                </p>
+                <h4>App</h4>
+              </div>
+              <div class="columns three service">
+                <p class="feature-icon">
+                  <img src="{{site.theme.link}}/img/desktop.svg">
+                </p>
+                <h4>Desktop app</h4>
+              </div>
+            </div>
+          </div>
+          <p class="goto-portfolio">
+            <a href="portfolio">
+              <button class="button-primary">
+                lavori realizzati
+              </button>
+            </a>
+          </p>
+        </section>
+      
+{% endblock %}

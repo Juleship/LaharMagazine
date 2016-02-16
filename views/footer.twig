@@ -1,0 +1,38 @@
+<footer>
+  <div class="container">
+    <div class="row">
+    	<div class="col-sm-4">
+    		<h4>Lahar Magazine</h4>
+    		<p>
+    			via Monte Grappa 23 <br>
+    			35014 Fontaniva (PD) <br>
+    			Italia
+    		</p>
+            <p>
+                <a href="mailto:redazione@laharmagazine.com">redazione@laharmagazine.com</a>
+            </p>
+        </div>
+
+        <div class="col-sm-4">
+            <h4>MENU</h4>
+            <p>
+              {% for item in menu.get_items %}
+                  <a href="{{item.get_link}}">{{item.title}}</a><br>
+              {% endfor %}
+          </p>
+      </div>
+      <div class="col-sm-4">
+          <h4>BE SOCIAL</h4>
+          <p>
+             <a href="https://www.facebook.com/laharmagazine" target="_blank">Facebook</a> <br>
+             <a href="https://twitter.com/lahar_magazine" target="_blank">Twitter</a> <br>
+             <a href="http://instagram.com/laharmagazine" target="_blank">Instagram</a>
+         </p>
+     </div>
+ </div>
+ <hr>
+ <p class="copyright text-center">
+     Copyright {{"now"|date('Y')}} - Lahar Magazine<br>Design e sviluppo web: <a href="http://belka.us">Belka</a>
+ </p>
+</div>
+</footer>

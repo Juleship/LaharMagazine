@@ -1,0 +1,24 @@
+{% extends "tease.twig" %}
+
+{% block content %}
+	<a class="columns twelve home-post-wrapper wow fadeInUp" href="{{post.link}}">
+		<div class="home-post">
+			<div class="home-post-description">
+				<h4>{{post.title}}</h4>
+				<p>
+					{% if post.terms('tags') %}
+						<em>
+							di 
+								{% for term in post.terms('tags') %} 
+									{{term.name}} 
+								{% endfor %}
+						</em>
+					{% endif %}
+			  </p>
+				<p>
+					{{post.get_preview(40)}}
+				</p>
+			</div>
+		</div>
+	</a>
+{% endblock %}

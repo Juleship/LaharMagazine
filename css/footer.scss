@@ -1,0 +1,11 @@
+footer {
+	padding-top: 1em;
+	padding-bottom: 1.5em;
+	background: #333333;
+	h4, p, a {
+		color: white !important;
+		&:hover {
+			color: white;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <h1>{{page.title}}</h1>
+
+  <p class="approach-p">
+    {{page.content}}
+  </p>
+  <div class="container blog-container">
+    {% for portfolio in portfolios %}
+      <a href="{{ portfolio.permalink }}">
+        <div class="preview" style="background: url('{{ portfolio.thumbnail.src('large') }}') center; background-size: cover;"></div>
+        <h2>
+          {{ portfolio.title }}
+        </h2>
+        <p>
+          {{ portfolio.contentre|excerpt(30) }}
+        </p>
+        <a class="read-more" href="{{ portfolio.permalink }}">Read more</a>
+      </a>
+      {% if loop.last == false %}
+        <hr>
+      {% endif %}
+    {% else %}
+      <li>Sorry, no posts matched your criteria</li>
+    {% endfor %}
+  </div>
+
+
+{% endblock %}
