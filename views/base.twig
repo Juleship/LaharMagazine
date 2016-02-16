@@ -34,33 +34,8 @@
 		{{ function('wp_footer') }}
 	{% endblock %}
 
-	<script src="{{site.theme.link}}/js/build/production.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
-	<script type="text/javascript">
-    // l'audio funziona porcodio
-  //   $( document ).ready(function() {
-  //    var iframe = document.getElementsByTagName('iframe')[0];
-
-    //  iframe.contentWindow.postMessage('{"method":"setVolume", "value":0}','*');
-    // });
-</script>
-<script src="/bower_components/waypoints/lib/noframework.waypoints.min.js"></script>
-
-<!-- trigger menu with waypoint -->
-<script>
-	$( document ).ready(function() {
-		var waypoint = new Waypoint({
-			element: document.getElementById('briefing'),
-			handler: function(direction) {
-				if(direction === 'down') {
-					$('.navbar').addClass('stuck');
-				}
-			}
-		})
-	});
-</script>
-
-
+	<script src="{{site.theme.link}}/js/build/production.min.js"></script>
 
 </body>
 </html>
