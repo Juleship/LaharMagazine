@@ -1,4 +1,4 @@
-#B3LAB wordpress theme
+#Lahar Magazine wordpress theme
 
 Install a local copy of Wordpress. You can use MAMP. https://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP
 
