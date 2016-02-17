@@ -83,17 +83,17 @@
             <img src="{{site.theme.link}}/img/iconcina.png" alt="">
           </p>
           <h4>Instagram feed</h4>
-          {% for foto in fotos %}
-            {% if loop.index <= 6 %}
-              {% if loop.index % 2 == 1 %}<div class="row row-insta">{% endif %}  
+          <div class="row">
+            {% for foto in fotos %}
+              {% if loop.index <= 6 %}
               <div class="col-sm-6">
                 <a href="{{foto.link}}" target="_blank">
-                  <img class="img-responsive center-block" src="{{foto.images.low_resolution.url}}" />
+                  <img class="img-responsive center-block img-insta" src="{{foto.images.low_resolution.url}}" />
                 </a>
               </div>
-              {% if loop.index % 2 == 0 %}</div>{% endif %}
-            {% endif %}
-          {% endfor %}
+              {% endif %} 
+            {% endfor %}
+          </div>
         </div>
 
       </div>
