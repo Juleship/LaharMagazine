@@ -35,4 +35,7 @@ $jsonData = json_decode($json);
 $data = $jsonData->data;
 $context['fotos'] = $data;
 
+$colore = get_theme_mod("colore_edizione");
+$context['colore'] = $colore;
+
 Timber::render( $templates, $context );

@@ -1,4 +1,34 @@
 <?php
+function my_customize_register( $wp_customize ) {
+
+    $wp_customize->add_section(
+        'sezione_colore',
+        array(
+       		'title'       => 'Colore edizione',
+        )
+    );
+
+    $wp_customize->add_setting(
+        'colore_edizione',
+        array(
+            'default'    => '#000000',
+            'type' => 'theme_mod',
+  			'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+        )
+    );
+
+    $wp_customize->add_control(
+        'colore_option',
+        array(
+            'label'      => 'Setta il colore',
+            'section'    => 'sezione_colore',
+            'settings'   => 'colore_edizione',
+        )
+    );
+
+}
+add_action( 'customize_register' , 'my_customize_register' );
 
 function custom_excerpt_length( $length ) {
 	return 30;
