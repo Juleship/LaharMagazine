@@ -77,6 +77,25 @@
           <h4>Cucina con Pink Sesso</h4>
           <p>Immersi le mie dita nel burro. Mi sentivo felice.</p>
         </div>
+
+        <div class="rubrica">
+          <p class="text-center">
+            <img src="{{site.theme.link}}/img/iconcina.png" alt="">
+          </p>
+          <h4>Instagram feed</h4>
+          {% for foto in fotos %}
+            {% if loop.index <= 6 %}
+              {% if loop.index % 2 == 1 %}<div class="row row-insta">{% endif %}  
+              <div class="col-sm-6">
+                <a href="{{foto.link}}" target="_blank">
+                  <img class="img-responsive center-block" src="{{foto.images.low_resolution.url}}" />
+                </a>
+              </div>
+              {% if loop.index % 2 == 0 %}</div>{% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+
       </div>
     </div>  
   </div>

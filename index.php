@@ -24,4 +24,15 @@ if ( is_home() ) {
 	array_unshift( $templates, 'home.twig' );
 }
 $context['categories'] = Timber::get_terms('category');
+
+/*
+Instagram API
+User ID: 317500696
+access_token: 317500696.6341235.9a09e51cf75748728508be9b0d90c7e9
+*/
+$json = file_get_contents('https://api.instagram.com/v1/users/317500696/media/recent/?access_token=317500696.6341235.9a09e51cf75748728508be9b0d90c7e9');
+$jsonData = json_decode($json);
+$data = $jsonData->data;
+$context['fotos'] = $data;
+
 Timber::render( $templates, $context );
