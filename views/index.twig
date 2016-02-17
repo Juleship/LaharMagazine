@@ -12,7 +12,7 @@
       </div>
     </div>
     <div id="video-opacity"></div>
-      <iframe id="#video-player" src="http://player.vimeo.com/video/118424243?api=1;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      <iframe id="#video-player" src="{{url_video}}?api=1;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
   </div>
   <!-- /#video-hero -->
 
@@ -83,7 +83,6 @@
             <img src="{{site.theme.link}}/img/iconcina.png" alt="">
           </p>
           <h4>Instagram feed</h4>
-          <p>colore: {{colore}}</p>
           <div class="row">
             {% for foto in fotos %}
               {% if loop.index <= 6 %}

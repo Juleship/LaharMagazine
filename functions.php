@@ -1,10 +1,11 @@
 <?php
-function my_customize_register( $wp_customize ) {
-
-    $wp_customize->add_section(
-        'sezione_colore',
+function laharmag_customize_register( $wp_customize ) {
+	/*
+	/ Colore dell'edizione
+    $wp_customize->add_section('sezione_colore',
         array(
-       		'title'       => 'Colore edizione',
+       		'title'       => __('Colore edizione', 'documentation'),
+       		'priority'    => 100,
         )
     );
 
@@ -15,6 +16,7 @@ function my_customize_register( $wp_customize ) {
             'type' => 'theme_mod',
   			'capability' => 'edit_theme_options',
             'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_hex_color',
         )
     );
 
@@ -26,9 +28,41 @@ function my_customize_register( $wp_customize ) {
             'settings'   => 'colore_edizione',
         )
     );
+    */
 
+	/*
+    / Video dell'edizione
+    */
+    $wp_customize->add_section('sezione_video',
+        array(
+            'title'       => __('Video','documentation'),
+            'priority'    => 110,
+        )
+    );
+
+    $wp_customize->add_setting(
+        'video_edizione',
+        array(
+            'default'    => 'http://player.vimeo.com/video/118424243',
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+        )
+    );
+
+    $wp_customize->add_control(
+        'colore_option',
+        array(
+            'label'      => 'Setta il video',
+            'section'    => 'sezione_video',
+            'settings'   => 'video_edizione',
+        )
+    );
+
+    
 }
-add_action( 'customize_register' , 'my_customize_register' );
+add_action( 'customize_register' , 'laharmag_customize_register' );
+
 
 function custom_excerpt_length( $length ) {
 	return 30;
