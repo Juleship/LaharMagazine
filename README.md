@@ -12,5 +12,6 @@ You will need some plugin to see all the features:
 - Timber
 - Category Icons
 - Yet Another Related Posts Plugin
+- Contact Form 7
 
 Update your files (minify and stuff) with grunt. You can run grunt just typing `grunt` in your terminal in the directory
