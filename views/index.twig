@@ -113,7 +113,7 @@
         player = new YT.Player('player', {
           height: '281',
           width: '500',
-          playerVars: { 'autoplay': 1, 'controls': 0,'autohide': 1, 'showinfo': 0, 'modestbranding': 1, 'loop': 1 },
+          playerVars: { 'autoplay': 1, 'controls': 0,'autohide': 1, 'showinfo': 0, 'modestbranding': 1, 'loop': 1, 'playlist': '{{youtube_code}}'},
           videoId: '{{youtube_code}}',
           events: {'onReady': onPlayerReady}
         });
