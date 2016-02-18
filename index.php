@@ -35,6 +35,10 @@ $jsonData = json_decode($json);
 $data = $jsonData->data;
 $context['fotos'] = $data;
 
-$context['youtube_code'] = get_theme_mod("video_edizione");
+// Seleziona le impostazioni settate nel pannello di personaliizazione del tema WP
+$options = get_option("laharmagazine_theme_options");
+$context['youtube_code'] = $options['youtube_code'];
+$context['category_now'] = $options['category_select'];
+$context['edition_color'] = $options['edition_color'];
 
 Timber::render( $templates, $context );

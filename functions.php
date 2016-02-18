@@ -1,68 +1,63 @@
 <?php
-function laharmag_customize_register( $wp_customize ) {
-	/*
-	/ Colore dell'edizione
-    $wp_customize->add_section('sezione_colore',
-        array(
-       		'title'       => __('Colore edizione', 'documentation'),
-       		'priority'    => 100,
-        )
-    );
+/*
+* Theme Options – The Customizer API
+* https://developer.wordpress.org/themes/advanced-topics/customizer-api/
+*/
+function laharmagazine_customize_register($wp_customize){
 
-    $wp_customize->add_setting(
-        'colore_edizione',
-        array(
-            'default'    => '#000000',
-            'type' => 'theme_mod',
-  			'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-            'sanitize_callback' => 'sanitize_hex_color',
-        )
-    );
+    $wp_customize->add_section('laharmagazine_color_scheme', array(
+        'title'    => __('Impostazioni', 'laharmagazine'),
+        'priority' => 120,
+    ));
 
-    $wp_customize->add_control(
-        'colore_option',
-        array(
-            'label'      => 'Setta il colore',
-            'section'    => 'sezione_colore',
-            'settings'   => 'colore_edizione',
-        )
-    );
-    */
+    // Youtube Video                
+    $wp_customize->add_setting('laharmagazine_theme_options[youtube_code]', array(
+        'default'        => 'AbvxR0STPmU',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+    ));
+    $wp_customize->add_control('laharmagazine_text_test', array(
+        'label'      => __('Codice video YouTube', 'laharmagazine'),
+        'section'    => 'laharmagazine_color_scheme',
+        'settings'   => 'laharmagazine_theme_options[youtube_code]',
+    ));
+    
+    // Select Category              
+    $categories = get_categories();
+    $cat_list = array();
+    foreach ($categories as $c) {
+        $cat_name = $c->name;
+        $cat_select[$cat_name] = $cat_name;
+    }
 
-	/*
-    / Video dell'edizione
-    */
-    $wp_customize->add_section('sezione_video',
-        array(
-            'title'       => __('Video','documentation'),
-            'priority'    => 110,
-        )
-    );
-
-    $wp_customize->add_setting(
-        'video_edizione',
-        array(
-            'default'    => 'AbvxR0STPmU',
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-        )
-    );
-
-    $wp_customize->add_control(
-        'colore_option',
-        array(
-            'label'      => 'Inserisci il codice del video YouTube',
-            'section'    => 'sezione_video',
-            'settings'   => 'video_edizione',
-        )
-    );
-
+    $wp_customize->add_setting('laharmagazine_theme_options[category_select]', array(
+        'default'        => 'Categoria',
+        'capability'     => 'edit_theme_options',
+        'type'           => 'option',
+    ));
+    $wp_customize->add_control( 'example_select_box', array(
+        'settings' => 'laharmagazine_theme_options[category_select]',
+        'label'   => 'Seleziona il numero di riferimento',
+        'section' => 'laharmagazine_color_scheme',
+        'type'    => 'select',
+        'choices'    => $cat_select,
+    ));
+       
+    // Color picker              
+    $wp_customize->add_setting('laharmagazine_theme_options[edition_color]', array(
+        'default'           => '#000',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'capability'        => 'edit_theme_options',
+        'type'           => 'option',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'edition_color', array(
+        'label'    => __('Colore edizione', 'laharmagazine'),
+        'section'  => 'laharmagazine_color_scheme',
+        'settings' => 'laharmagazine_theme_options[edition_color]',
+    )));
     
 }
-add_action( 'customize_register' , 'laharmag_customize_register' );
-
+add_action('customize_register', 'laharmagazine_customize_register');
 
 function custom_excerpt_length( $length ) {
 	return 30;
