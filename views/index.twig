@@ -12,7 +12,8 @@
       </div>
     </div>
     <div id="video-opacity"></div>
-      <iframe id="#video-player" src="{{url_video}}?api=1;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <!-- YouTube -->
+    <div id="player"></div>
   </div>
   <!-- /#video-hero -->
 
@@ -99,5 +100,28 @@
       </div>
     </div>  
   </div>
+<script>  
+      // Loads the iframe
+      var tag = document.createElement('script');
+      tag.src = "http://www.youtube.com/player_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+      // Video data
+      var player;
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player('player', {
+          height: '281',
+          width: '500',
+          playerVars: { 'autoplay': 1, 'controls': 0,'autohide': 1, 'showinfo': 0, 'modestbranding': 1, 'loop': 1 },
+          videoId: '{{youtube_code}}',
+          events: {'onReady': onPlayerReady}
+        });
+      }
+
+      // Functions on video
+      function onPlayerReady(event) {
+        event.target.mute();
+      }
+</script>
 {% endblock %}

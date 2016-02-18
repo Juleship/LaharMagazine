@@ -43,7 +43,7 @@ function laharmag_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'video_edizione',
         array(
-            'default'    => 'http://player.vimeo.com/video/118424243',
+            'default'    => 'AbvxR0STPmU',
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
@@ -53,7 +53,7 @@ function laharmag_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         'colore_option',
         array(
-            'label'      => 'Setta il video',
+            'label'      => 'Inserisci il codice del video YouTube',
             'section'    => 'sezione_video',
             'settings'   => 'video_edizione',
         )

@@ -35,6 +35,6 @@ $jsonData = json_decode($json);
 $data = $jsonData->data;
 $context['fotos'] = $data;
 
-$context['url_video'] = get_theme_mod("video_edizione");
+$context['youtube_code'] = get_theme_mod("video_edizione");
 
 Timber::render( $templates, $context );
