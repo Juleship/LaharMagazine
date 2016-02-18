@@ -60,18 +60,29 @@ hr {
   .lahar-navbar{
     font-size: 40px;
     letter-spacing: 3px;
+    padding-left: 15px;
   }
   .magazine-navbar {
     font-size: 14px;
     position: absolute;
     top: 25px;
     left: 0;
-    letter-spacing: 1px
+    letter-spacing: 1px;
+    padding-left: 15px;
   }
 }
 
 .navbar-default {
   background: white;
+}
+
+.navbar-header {
+  background: white;
+  height: 100px;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border: none;
 }
 
 .stuck {
@@ -94,6 +105,10 @@ hr {
   text-transform: uppercase;
   background-color: #fff;
   z-index: 10;
+}
+
+.navbar-toggle {
+  margin-top: 30px;
 }
 /*
 	HERO
