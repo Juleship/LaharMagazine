@@ -10296,11 +10296,13 @@ $( document ).ready(function() {
   	console.log('mobile');
   }
   
+  // change color of edition
   var color_code = $("#edition_color").val();
   $("hr").each(function(){
     $(this).css("border-color", color_code);
   });
   $("body").css("border-color", color_code);
+  $("#video-opacity").css("background-color", color_code).css("opacity", "0.3");
 });
 /*!
  * classie - class helper functions
