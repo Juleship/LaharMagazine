@@ -98,6 +98,11 @@ class StarterSite extends TimberSite {
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new TimberMenu('Top Menu');
 		$context['site'] = $this;
+        // Seleziona le impostazioni settate nel pannello di personaliizazione del tema WP
+        $options = get_option("laharmagazine_theme_options");
+        $context['youtube_code'] = $options['youtube_code'];
+        $context['category_now'] = $options['category_select'];
+        $context['edition_color'] = $options['edition_color'];
 		return $context;
 	}
 
