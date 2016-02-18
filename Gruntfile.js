@@ -22,7 +22,8 @@ module.exports = function(grunt) {
                 src: [
                     'bower_components/stellar.js/libs/jquery/jquery-1.9.1.js',
                     'bower_components/stellar.js/src/jquery.stellar.js',
-                    'bower_components/wow.js/dist/wow.min.js',                    
+                    'bower_components/wow.js/dist/wow.min.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.min.js',                    
                     'js/site.js',
                     'js/overlay-menu/classie.js',
                     'js/overlay-menu/modernizr.custom.js',
