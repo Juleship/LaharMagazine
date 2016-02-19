@@ -237,3 +237,19 @@ briefing
 .read-more {
   display: none;
 }
+
+/*
+* Navbar per dispositivi tablet
+*/
+@media screen and (min-width: 768px) and (max-width: 992px) { 
+    .logo {
+      position: absolute;
+      left: 46%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .collapse {
+      margin-top: 80px;
+    }
+  }
