@@ -6,7 +6,7 @@
 function laharmagazine_customize_register($wp_customize){
 
     $wp_customize->add_section('laharmagazine_color_scheme', array(
-        'title'    => __('Impostazioni', 'laharmagazine'),
+        'title'    => __('Tema di riferimento', 'laharmagazine'),
         'priority' => 120,
     ));
 
