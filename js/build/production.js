@@ -10317,8 +10317,6 @@ $( document ).ready(function() {
     $(this).css("background", rgba);
   });
 
-
-
 });
 
 /*!
