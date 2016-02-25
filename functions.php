@@ -5,7 +5,7 @@
 */
 function laharmagazine_customize_register($wp_customize){
 
-    $wp_customize->add_section('laharmagazine_color_scheme', array(
+    $wp_customize->add_section('laharmagazine_settings', array(
         'title'    => __('Tema di riferimento', 'laharmagazine'),
         'priority' => 120,
     ));
@@ -18,7 +18,7 @@ function laharmagazine_customize_register($wp_customize){
     ));
     $wp_customize->add_control('laharmagazine_text_test', array(
         'label'      => __('Codice video YouTube', 'laharmagazine'),
-        'section'    => 'laharmagazine_color_scheme',
+        'section'    => 'laharmagazine_settings',
         'settings'   => 'laharmagazine_theme_options[youtube_code]',
     ));
     
@@ -29,7 +29,6 @@ function laharmagazine_customize_register($wp_customize){
         $cat_name = $c->name;
         $cat_select[$cat_name] = $cat_name;
     }
-
     $wp_customize->add_setting('laharmagazine_theme_options[category_select]', array(
         'default'        => 'Categoria',
         'capability'     => 'edit_theme_options',
@@ -38,7 +37,7 @@ function laharmagazine_customize_register($wp_customize){
     $wp_customize->add_control( 'example_select_box', array(
         'settings' => 'laharmagazine_theme_options[category_select]',
         'label'   => 'Seleziona il numero di riferimento',
-        'section' => 'laharmagazine_color_scheme',
+        'section' => 'laharmagazine_settings',
         'type'    => 'select',
         'choices'    => $cat_select,
     ));
@@ -52,9 +51,22 @@ function laharmagazine_customize_register($wp_customize){
     ));
     $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'edition_color', array(
         'label'    => __('Colore edizione', 'laharmagazine'),
-        'section'  => 'laharmagazine_color_scheme',
+        'section'  => 'laharmagazine_settings',
         'settings' => 'laharmagazine_theme_options[edition_color]',
     )));
+
+    // Text area
+    $wp_customize->add_setting('laharmagazine_theme_options[edition_text]', array(
+        'default'           => '<p>Descrizione</p>',
+        'capability'        => 'edit_theme_options',
+        'type'           => 'option',
+    ));
+    $wp_customize->add_control('text_area', array(
+        'label'      => __('Testo edizione', 'laharmagazine'),
+        'section'    => 'laharmagazine_settings',
+        'settings'   => 'laharmagazine_theme_options[edition_text]',
+        'type' => 'textarea',
+    ));
     
 }
 add_action('customize_register', 'laharmagazine_customize_register');
@@ -70,6 +82,21 @@ if ( ! class_exists( 'Timber' ) ) {
 		} );
 	return;
 }
+
+/*
+** Estrae l'url dell'imamagine dal plug in category icons
+*/
+function extract_caticonsurl($string,$return_always_array=FALSE) {
+  $myarray = array();
+  if (preg_match_all('/<img\s+.*?src=[\"\']?([^\"\' >]*)[\"\']?[^>]*>/i', $string, $matches, PREG_SET_ORDER))  {
+    foreach ($matches as $match) {
+      $myarray[] = $match[1];
+    }
+  }
+  if ($return_always_array === FALSE && count($myarray) == 1 ) $myarray = array_pop($myarray);
+  return $myarray;
+}
+
 
 class StarterSite extends TimberSite {
 
@@ -103,6 +130,7 @@ class StarterSite extends TimberSite {
         $context['youtube_code'] = $options['youtube_code'];
         $context['category_now'] = $options['category_select'];
         $context['edition_color'] = $options['edition_color'];
+        $context['edition_text'] = $options['edition_text'];
 		return $context;
 	}
 

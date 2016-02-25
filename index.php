@@ -19,6 +19,10 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
+
+$cat_id = get_cat_ID($context['category_now']);
+$context['category_image'] = extract_caticonsurl(get_cat_icon('echo=false&cat='.$cat_id.''));
+
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'home.twig' );

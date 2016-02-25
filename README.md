@@ -13,5 +13,6 @@ You will need some plugin to see all the features:
 - Category Icons
 - Yet Another Related Posts Plugin
 - Contact Form 7
+- Category Icons
 
 Update your files (minify and stuff) with grunt. You can run grunt just typing `grunt` in your terminal in the directory
