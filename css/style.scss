@@ -239,6 +239,19 @@ $home-post-color: rgb(51, 51, 51); // rgb(136, 136, 136)
 }
 
 /*
+** Form newsletter
+*/
+.mc-field-group {
+  label {
+    font-family: "brandon-grotesque";
+    text-transform: uppercase;
+  }
+  input {
+    
+  }
+}
+
+/*
 ** Immagini nell'archivio
 */
 .cat-item a img {
