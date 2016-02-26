@@ -294,3 +294,13 @@ $home-post-color: rgb(51, 51, 51); // rgb(136, 136, 136)
     font-size: 1.5em;
   }
 }
+
+/*
+** Iframe
+*/
+@media only screen and (max-width: 760px) {
+  #player {
+    display: none;
+  }
+}
+

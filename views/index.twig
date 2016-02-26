@@ -86,7 +86,8 @@
 
     </div>  
   </div>
-<script>  
+  <script>
+  if (window.orientation == undefined) {  
       // Loads the iframe
       var tag = document.createElement('script');
       tag.src = "http://www.youtube.com/iframe_api";
@@ -109,12 +110,6 @@
       function onPlayerReady(event) {
         event.target.mute();
       }
-
-      // remove in mobile
-      $(document).ready(function(){
-        if (screen.width <= 760) {
-          $("iframe").remove();
-        }
-      });
-</script>
+    }
+    </script>
 {% endblock %}
