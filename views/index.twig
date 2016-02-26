@@ -109,5 +109,12 @@
       function onPlayerReady(event) {
         event.target.mute();
       }
+
+      // remove in mobile
+      $(document).ready(function(){
+        if (screen.width <= 760) {
+          $("iframe").remove();
+        }
+      });
 </script>
 {% endblock %}
