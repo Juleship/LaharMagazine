@@ -42,11 +42,10 @@ hr {
   border-width: 3px;
 }
 /*
-	NAVBAR
+** NAVBAR
 */
 .navbar {
   margin: 0;
-  height: 100px;
   box-shadow: none !important;
   border: 0
 }
@@ -74,11 +73,12 @@ hr {
 
 .navbar-default {
   background: white;
+  padding-top: 20px;
 }
 
 .navbar-header {
   background: white;
-  height: 100px;
+  height: 80px;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -96,7 +96,7 @@ hr {
   line-height: 50px !important;
 }
 .navbar .container div a {
-  line-height: 100px;
+  line-height: 45pt;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -107,9 +107,6 @@ hr {
   z-index: 300;
 }
 
-.navbar-toggle {
-  margin-top: 30px;
-}
 /*
 	HERO
 */
@@ -241,6 +238,27 @@ $home-post-color: rgb(51, 51, 51); // rgb(136, 136, 136)
 }
 
 /*
+** Form newsletter
+*/
+.mc-field-group {
+  label {
+    font-family: "brandon-grotesque";
+    text-transform: uppercase;
+  }
+  input {
+    
+  }
+}
+
+/*
+** Immagini nell'archivio
+*/
+.cat-item a img {
+  width: 111px;
+  height: auto;
+}
+
+/*
 ** Navbar per dispositivi tablet
 */
 @media screen and (min-width: 768px) and (max-width: 992px) { 
@@ -252,7 +270,7 @@ $home-post-color: rgb(51, 51, 51); // rgb(136, 136, 136)
   }
 
   .collapse {
-    margin-top: 80px;
+    margin-top: 50px;
   }    
 }
 
@@ -267,4 +285,22 @@ $home-post-color: rgb(51, 51, 51); // rgb(136, 136, 136)
   #welcome p {
     font-size: .9em;
   }
+
+  #page h2 {
+    font-size: 2em;
+  }
+
+  .about-p h3 {
+    font-size: 1.5em;
+  }
 }
+
+/*
+** Iframe
+*/
+@media only screen and (max-width: 760px) {
+  #player {
+    display: none;
+  }
+}
+

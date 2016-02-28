@@ -10317,6 +10317,12 @@ $( document ).ready(function() {
     $(this).css("background", rgba);
   });
 
+  // is mobile
+  if (window.orientation !== undefined) {
+    $("#player").remove();
+    $("#video-opacity").css("opacity", "1");
+  }
+  
 });
 
 /*!
