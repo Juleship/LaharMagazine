@@ -26,8 +26,11 @@
           <img src="{{category_image}}">
          </div>
         <div class="col-sm-9">
-          <h2>Tema del numero</h2>
-          {{edition_text}}
+          <!-- <h2>Tema del numero</h2>
+          {{edition_text}} -->
+          {% filter shortcodes %}
+            [gallery category="26-invidia" columns="4" size="thumbnail" itemtag="div" icontag="span" link="none"]
+          {% endfilter %}
         </div>
       </div>
     </div>

@@ -19,8 +19,8 @@ a:hover {
 	p {
 		color: rgba(0,0,0,0.85);
 		font-size: 22px;
-    line-height: 1.58;
-    letter-spacing: -0.003em;
+		line-height: 1.58;
+		letter-spacing: -0.003em;
 	}
 
 	img {
@@ -38,12 +38,29 @@ a:hover {
 		@extend .col-sm-3;
 		list-style: none;
 		display: inline;
-    padding-right: 7px;
-    padding-left: 7px;
+		padding-right: 7px;
+		padding-left: 7px;
 	}
 }
 
 .page-title {
 	text-align: center;
 	margin: 1em 0;
+}
+
+/* --------------------------- */
+
+#gallery-1 {
+	margin: auto;
+}
+#gallery-1 .gallery-item {
+	float: left;
+	margin-right: 10px;
+	text-align: center;
+}
+#gallery-1 img {
+	border: none;
+}
+#gallery-1 .gallery-caption {
+	margin-left: 0;
 }

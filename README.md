@@ -14,5 +14,6 @@ You will need some plugin to see all the features:
 - Yet Another Related Posts Plugin
 - Contact Form 7
 - Category Icons
+- (Media Library Categories)[https://wordpress.org/plugins/wp-media-library-categories/]
 
 Update your files (minify and stuff) with grunt. You can run grunt just typing `grunt` in your terminal in the directory

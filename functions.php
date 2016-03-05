@@ -1,5 +1,10 @@
 <?php
 /*
+** Remove default [gallery] style
+*/
+add_filter( 'use_default_gallery_style', '__return_false' );
+
+/*
 * Theme Options – The Customizer API
 * https://developer.wordpress.org/themes/advanced-topics/customizer-api/
 */
