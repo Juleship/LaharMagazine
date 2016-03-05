@@ -53,6 +53,11 @@
 
       {# sidebar #}
       <div class="col-sm-4 hidden-xs">
+        <div class="rubrica">
+          <p class="text-center">
+            Propelled by <a href="https://www.pixartprinting.it/"><img height="20px" src="{{site.theme.link}}/img/pixartprinting.png" alt="PixartPrinting"></a>
+          </p>
+        </div>
         {# Abbonati #}
         <div class="rubrica">
           <p class="text-center">
@@ -78,18 +83,18 @@
           <div class="row">
             {% for foto in fotos %}
               {% if loop.index <= 6 %}
-              <div class="col-sm-6">
-                <a href="{{foto.link}}" target="_blank">
-                  <img class="img-responsive center-block img-insta" src="{{foto.images.low_resolution.url}}" alt="Lahar Magazine #{{foto.tags[0]}}" title="Lahar Magazine #{{foto.tags[0]}}" />
-                </a>
-              </div>
+                <div class="col-sm-6">
+                  <a href="{{foto.link}}" target="_blank">
+                    <img class="img-responsive center-block img-insta" src="{{foto.images.low_resolution.url}}" alt="Lahar Magazine #{{foto.tags[0]}}" title="Lahar Magazine #{{foto.tags[0]}}" />
+                  </a>
+                </div>
               {% endif %} 
             {% endfor %}
           </div>
         </div>
 
         {# Collabora #}
-       <div class="rubrica">
+        <div class="rubrica">
           <p class="text-center">
             <!-- Light Bulb By Blake Kathryn -->
             <img class="rubrica-icona" src="{{site.theme.link}}/img/bulb.svg" alt="Envelope">
@@ -102,9 +107,7 @@
             </a>
           </p>
         </div>
-
       </div>
-
     </div>  
   </div>
   <script>
