@@ -31,7 +31,7 @@ get_header(); ?>
 							<?php 
 							$next_cat = get_category_by_slug('next');
 							if (function_exists('put_cat_icons')) 
-								put_cat_icons(wp_list_categories('exclude=1,22,30,31,32,33,34,35,36,37,9&title_li=&echo=0'),'icons_only=true'); 
+								put_cat_icons(wp_list_categories('exclude=1,22,30,31,32,33,34,35,36,37,38&title_li=&echo=0'),'icons_only=true'); 
 							else wp_list_categories('title_li');
 							?>
 						</ul>

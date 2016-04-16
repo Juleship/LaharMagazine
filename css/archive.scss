@@ -3,5 +3,11 @@
 
 	.cat-item {
 		background: red;
+		a {
+			display: block;
+			img {
+				width: 100%;
+			}
+		}
 	}
 }

@@ -200,7 +200,8 @@ briefing
   margin-top: 0;
 }
 .rubrica-icona {
-  width: 30%;
+  height: 80px;
+  width: auto;
 }
 .img-insta {
   margin-bottom: 15px;
@@ -254,7 +255,7 @@ $home-post-color: rgb(51, 51, 51); // rgb(136, 136, 136)
 ** Immagini nell'archivio
 */
 .cat-item a img {
-  width: 111px;
+  width: 100%;
   height: auto;
 }
 
@@ -293,6 +294,10 @@ $home-post-color: rgb(51, 51, 51); // rgb(136, 136, 136)
   .about-p h3 {
     font-size: 1.5em;
   }
+}
+
+.btn-primary {
+  background: #337ab7;
 }
 
 /*
