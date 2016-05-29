@@ -15,8 +15,6 @@ $context['post'] = $post;
 $context['wp_title'] = $post->title();
 $context['comment_form'] = TimberHelper::get_comment_form();
 
-print($post->format);
-
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {
