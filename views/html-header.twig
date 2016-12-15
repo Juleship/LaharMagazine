@@ -41,10 +41,14 @@ Belka
         {{ site.name }}
         {% endif %}
     </title>
-    <meta name="description" content="{{site.description}}">
+    {% if post.get_preview(80) %}
+      <meta name="description" content="{{post.get_preview(80, false, '')}}">
+    {% else %}
+      <meta name="description" content="{{site.description}}">
+    {% endif %}
 
     {% if post.thumbnail %}
-      <meta property="og:image" content="{{post.thumbnail.src|resize(1500)}}"/>
+      <meta property="og:image" content="{{post.thumbnail.src}}"/>
     {% else %}
       <meta property="og:image" content="http://www.laharmagazine.com/screenshot.png"/>
     {% endif %}
