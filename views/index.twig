@@ -2,6 +2,8 @@
 
 {% block content %}
 
+  $context['images'] = Timber::get_terms('category', array('parent' => 0));
+
   <!-- hero with video -->
   <div id="video-hero" style="width: 100%;">
     <div class="container">
@@ -54,19 +56,6 @@
 
       {# sidebar #}
       <div class="col-sm-4 hidden-xs">
-        <div class="rubrica">
-          <p class="text-center">
-            <a href="https://www.pixartprinting.it/"><img style="height:50px;width:auto" src="{{site.theme.link}}/img/pixartprinting.png" alt="PixartPrinting"></a>
-          </p>
-        </div>
-        
-        {# Abbonati #}
-        <div class="rubrica">
-          <p class="text-center">
-            <a href="http://www.laharmagazine.com/italianism-il-design-della-parola/"><img style="height:50px;width:auto" src="{{site.theme.link}}/img/italianism.jpg" alt="italianism"></a>
-          </p>
-        </div>
-
         {# Abbonati #}
         <div class="rubrica">
           <p class="text-center">

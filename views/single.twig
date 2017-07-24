@@ -17,9 +17,9 @@
 							{% if post.terms('tags') %}
 								di 
 								{% for term in post.terms('tags') %} 
-									<a href="{{ term.link }}"><em>
-										{{term.name}} 
-									</em></a>
+									<a href="{{ term.link }}">
+										<em>{{term.name}}</em>
+									</a>
 								{% endfor %}
 							{% endif %}
 						</p>
@@ -28,14 +28,18 @@
 				{% else %}
 				<div class="article">
 					<h1>{{post.title}}</h1>
-					{% if post.terms('tags') %}
-						di 
-						<em>
-							{% for term in post.terms('tags') %} 
-								{{term.name}} 
-							{% endfor %}
-						</em>
-					{% endif %}
+					<p>
+						{% if post.terms('tags') %}
+							di 
+							<em>
+								{% for term in post.terms('tags') %} 
+									<a href="{{ term.link }}">
+										{{term.name}} 
+									</a>
+								{% endfor %}
+							</em>
+						{% endif %}
+					</p>
 				</p>
 			</div>
 		{% endif %}
