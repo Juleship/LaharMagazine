@@ -1,4 +1,4 @@
-#Lahar Magazine wordpress theme
+# Lahar Magazine wordpress theme
 
 Install a local copy of Wordpress. You can use MAMP. https://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP
 
@@ -16,4 +16,4 @@ You will need some plugin to see all the features:
 - Category Icons
 - (Media Library Categories)[https://wordpress.org/plugins/wp-media-library-categories/]
 
-Update your files (minify and stuff) with grunt. You can run grunt just typing `grunt` in your terminal in the directory
+Update your files (minify and stuff) with grunt. In order to use it run `npm install` before starting it, otherwise you don't have enough js in your project! You can run grunt just typing `grunt` in your terminal in the directory
