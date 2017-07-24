@@ -42,7 +42,7 @@
   <!-- /#briefing -->
   <div id="main" class="container">
     <div class="row">
-      
+
       {# articoli #}
       <div class="col-sm-8">
         <h3>In questo numero</h3>
@@ -50,7 +50,7 @@
         {% for post in posts %}
           {% if post.category == category_now %}
             {% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-          {% endif %} 
+          {% endif %}
         {% endfor %}
       </div>
 
@@ -86,7 +86,7 @@
                     <img class="img-responsive center-block img-insta" src="{{foto.images.low_resolution.url}}" alt="Lahar Magazine #{{foto.tags[0]}}" title="Lahar Magazine #{{foto.tags[0]}}" />
                   </a>
                 </div>
-              {% endif %} 
+              {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -133,7 +133,7 @@
             </a>
           </p>
         </div>
-        
+
         <div class="rubrica">
           <p class="text-center">
             <!-- Light Bulb By Blake Kathryn -->
@@ -154,10 +154,10 @@
         </div>
 
       </div>
-    </div>  
+    </div>
   </div>
   <script>
-  if (window.orientation == undefined) {  
+  if (window.orientation == undefined) {
       // Loads the iframe
       var tag = document.createElement('script');
       tag.src = "http://www.youtube.com/iframe_api";
